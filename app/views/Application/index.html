@@ -1,0 +1,24 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>FlexiNews</h1>
+
+<form method="post" action="@{Application.submitArticle()}">
+    <h2>Nouvel article</h2>
+    <label for="auteur">Auteur : </label>
+    <input type="content" id="auteur" name="auteur">
+    <br>
+    <label for="titre">Titre :</label>
+    <input type="content" name="titre" id="titre">
+    <br>
+    <label for="content">Article :</label>
+    <br>
+    <textarea id="content" name="content" type="content" rows="4" cols="50"></textarea>
+    <input type="submit" name="Envoyer">
+</form>
+
+#{list articles, as:'article'}
+<a href="@{Application.detail(article.uuid)}"><h2>${article.titre}</h2></a>
+<h3>Par ${article.auteur} le ${article.date.format('dd/MM/yyyy')}</h3>
+<p>${article.content}</p>
+#{/list}

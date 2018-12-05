@@ -1,0 +1,17 @@
+#{extends 'main.html'/}
+#{set title:play.i18n.Messages.get('inscription.title')/}
+
+<h1>&{'inscription.title'}</h1>
+<form method="post" action="@{Inscription.createUtilisateur()}">
+    <p>
+        <label for="username">&{'inscription.username'}</label>
+        <input id="username" type="text" name="username">
+    </p>
+    <p>
+        <label for="password">&{'inscription.password'}</label>
+        <input id="password" type="password" name="password">
+    </p>
+    <p>
+        <input type="submit" value="&{'inscription.signup'}">
+    </p>
+</form>

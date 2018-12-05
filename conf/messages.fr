@@ -1,0 +1,14 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+
+poec.secure.title=Connexion
+poec.secure.username=Nom d'utilisateur
+poec.secure.password=Mot de passe
+poec.secure.remember=Se souvenir de moi
+poec.secure.signin=Connexion
+poec.secure.signup=Inscription
+inscription.title=Inscription
+inscription.signup=Inscription
+inscription.password=Mot de passe
+inscription.username=Nom d'utilisateur

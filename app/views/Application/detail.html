@@ -1,0 +1,24 @@
+#{extends 'main.html'/}
+#{set title:"${article.titre}"/}
+
+<h1>${article.titre}</h1>
+<h2>Par ${article.auteur} le ${article.date.format('dd/MM/yyyy')}</h2>
+<p>${article.content}</p>
+<br>
+<h2>Commentaires</h2>
+#{list article.commentaires, as:'commentaire'}
+    <h3>${commentaire.auteur} le ${commentaire.date.format('dd/MM/yyyy')}</h3>
+    <p>${commentaire.content}</p>
+#{/list}
+
+
+<form method="post" action="@{Application.detail(article.uuid)}">
+    <h3>Nouveau commentaire</h3>
+    <label for="auteur">Auteur : </label>
+    <input type="content" id="auteur" name="auteur">
+    <br>
+    <label for="content">Commentaire :</label>
+    <br>
+    <textarea id="content" name="content" type="content" rows="4" cols="50"></textarea>
+    <input type="submit" name="Envoyer">
+</form>
